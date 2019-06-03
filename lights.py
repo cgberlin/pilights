@@ -22,7 +22,7 @@ BLUE_PIN  = 24
 # global states
 sleep     = False
 state     = True
-seconds   = 60.0 
+seconds   = 100.0 # minimum request time to stay within dark sky api tier
 
 # for testing the threads
 counter_saved    = 0

@@ -10,6 +10,7 @@ import termios
 import tty
 import pigpio # because no neopixel
 import time
+from random import randint
 from _thread import start_new_thread # PYTHON 3
 # from thread import start_new_thread # PYTHON 2
 #import pyrebase
@@ -128,6 +129,12 @@ while sleep == False:
     elif state == "USER":
         print(user_color)
         setUserValues()
+    elif state == "PARTY":
+        start_time = time.time()
+        setLights(RED_PIN, randint(0,255))
+        setLights(GREEN_PIN, randint(0,255))
+        setLights(BLUE_PIN, randint(0,255))
+        time.sleep(1 - ((time.time() - start_time) % 1))
     request_changed = False
     
 #pi.stop()
